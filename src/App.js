@@ -1,19 +1,22 @@
-import { Wrapper, Header } from "./layout";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { Provider } from 'react-redux';
+import { Wrapper, Header } from './layout';
+import store from './store';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Router from './routes/routes';
 
 const theme = createTheme({
   palette: {
     primary: {
-      light: "#4e8e5c",
-      main: "#1f6032",
-      dark: "#00350b",
-      contrastText: "#fff",
+      light: '#4e8e5c',
+      main: '#1f6032',
+      dark: '#00350b',
+      contrastText: '#fff',
     },
     secondary: {
-      light: "#fff161",
-      main: "#f8bf2a",
-      dark: "#c18f00",
-      contrastText: "#000",
+      light: '#fff161',
+      main: '#f8bf2a',
+      dark: '#c18f00',
+      contrastText: '#000',
     },
   },
   typography: {
@@ -26,11 +29,14 @@ const theme = createTheme({
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <Wrapper>
-        <Header />
-      </Wrapper>
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <Wrapper>
+          <Header />
+          <Router />
+        </Wrapper>
+      </ThemeProvider>
+    </Provider>
   );
 }
 
