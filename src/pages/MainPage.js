@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { getCharacters } from '../actions/characters';
 import { Container, Grid } from '@mui/material';
 import CharacterCard from '../components/CharacterCard/CharacterCard';
+import Loader from '../components/Loader/Loader';
 
 const MainPage = ({ getCharacters, dataCharacters }) => {
   const { characters, loading } = dataCharacters;
@@ -15,7 +16,7 @@ const MainPage = ({ getCharacters, dataCharacters }) => {
   return (
     <Container disableGutters className="py-container" maxWidth="lg">
       {loading ? (
-        <h2>LOADER AQUÍ</h2>
+        <Loader />
       ) : (
         <Grid container spacing={7}>
           {characters.length > 0 &&
