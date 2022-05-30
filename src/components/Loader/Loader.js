@@ -1,4 +1,3 @@
-import { Typography } from '@mui/material';
 import React from 'react';
 import Image from '../../assets/images/Walter-White-Breaking-Bad.png';
 

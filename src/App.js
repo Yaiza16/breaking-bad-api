@@ -4,6 +4,7 @@ import store from './store';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Router from './routes/routes';
 import { BrowserRouter } from 'react-router-dom';
+import { SWRConfig } from 'swr';
 
 const theme = createTheme({
   palette: {
@@ -32,13 +33,22 @@ function App() {
   return (
     <Provider store={store}>
       <ThemeProvider theme={theme}>
-        <BrowserRouter>
-          <Wrapper>
-            <Header />
-            <Router />
-            <Footer />
-          </Wrapper>
-        </BrowserRouter>
+        <SWRConfig
+          value={{
+            suspense: true,
+            revalidateOnFocus: false,
+            revalidateOnMount: false,
+            revalidateOnReconnect: false,
+          }}
+        >
+          <BrowserRouter>
+            <Wrapper>
+              <Header />
+              <Router />
+              <Footer />
+            </Wrapper>
+          </BrowserRouter>
+        </SWRConfig>
       </ThemeProvider>
     </Provider>
   );

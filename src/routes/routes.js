@@ -7,7 +7,7 @@ const Router = () => {
     <div className="routes-container">
       <Routes>
         <Route path="/" element={<MainPage />}></Route>
-        <Route path="/character/:characterId" element={<CharacterPage />} />
+        <Route path="/character/:characterName" element={<CharacterPage />} />
       </Routes>
     </div>
   );

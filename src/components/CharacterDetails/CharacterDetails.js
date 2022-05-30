@@ -1,42 +1,37 @@
-import { Button, Card, CardContent, Typography } from '@mui/material';
+import React from 'react';
+import { Card, CardContent } from '@mui/material';
 import { Box, Container } from '@mui/system';
-import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
-import { getQuote } from '../../actions/characters';
 import CharacterImage from './CharacterImage';
 import CharacterTabs from './CharacterTabs';
 import CharacterTitle from './CharacterTitle';
 import CharacterQuote from './CharacterQuote';
+import { useRequest } from '../../hooks/useRequest';
+import { useParams } from 'react-router-dom';
+import { apiGetCharacterByName } from '../../services/api';
 
-const CharacterDetails = ({ character, quote, statusQuote, getQuote }) => {
-  const { error, loading } = statusQuote;
-  useEffect(() => {
-    getQuote(character.name);
-  }, []);
-
-  const getNewQuote = () => getQuote(character.name);
+const CharacterDetails = () => {
+  let { characterName } = useParams();
+  console.log(characterName);
+  const { data: character } = useRequest(
+    `${apiGetCharacterByName}${characterName}`
+  );
 
   return (
     <Container
       sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
     >
-      <CharacterTitle name={character.name} />
+      <CharacterTitle name={character[0].name} />
       <div className="quote-container">
-        {!loading && quote && (
-          <CharacterQuote
-            quote={quote[0]}
-            handleClick={(handleOnClick) => getNewQuote(handleOnClick)}
-          />
-        )}
+        <CharacterQuote />
       </div>
       <Box>
         <Card
           sx={{ display: 'flex', maxWidth: '900px', width: '800px' }}
           className="card-detail-character-container"
         >
-          <CharacterImage name={character.name} image={character.img} />
+          <CharacterImage name={character[0].name} image={character[0].img} />
           <CardContent sx={{ width: '100%' }} className="card-detail-character">
-            <CharacterTabs character={character} />
+            <CharacterTabs character={character[0]} />
           </CardContent>
         </Card>
       </Box>
@@ -44,9 +39,4 @@ const CharacterDetails = ({ character, quote, statusQuote, getQuote }) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  quote: state.characters.quote,
-  statusQuote: state.characters,
-});
-
-export default connect(mapStateToProps, { getQuote })(CharacterDetails);
+export default CharacterDetails;

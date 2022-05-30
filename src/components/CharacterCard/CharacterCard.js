@@ -15,13 +15,14 @@ const CharacterCard = ({ character, setCurrentCharacter }) => {
   const navigate = useNavigate();
 
   const handleNavigate = () => {
-    const name = character.name.replace(/\s+/g, '');
+    const name = character.name.replace(/\s+/g, '+');
     navigate(`character/${name}`);
   };
   const handleOnClick = () => {
     setCurrentCharacter(character);
     handleNavigate();
   };
+  
 
   return (
     <Grid item xs={3}>

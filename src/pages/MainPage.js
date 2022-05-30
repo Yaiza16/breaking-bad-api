@@ -6,6 +6,7 @@ import { getCharacters } from '../actions/characters';
 import { Container, Grid } from '@mui/material';
 import CharacterCard from '../components/CharacterCard/CharacterCard';
 import Loader from '../components/Loader/Loader';
+import { motion } from 'framer-motion';
 
 const MainPage = ({ getCharacters, dataCharacters }) => {
   const { characters, loading } = dataCharacters;
@@ -16,7 +17,13 @@ const MainPage = ({ getCharacters, dataCharacters }) => {
   if (loading) return <Loader />;
   return (
     <Container disableGutters className="py-container" maxWidth="lg">
-      <Grid container spacing={7}>
+      <Grid
+        container
+        spacing={7}
+        component={motion.div}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+      >
         {characters.length > 0 &&
           characters.map((character) => (
             <CharacterCard character={character} />
