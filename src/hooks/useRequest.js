@@ -1,10 +1,12 @@
+import axios from 'axios';
 import useSWR from 'swr';
 
 const baseUrl = 'https://www.breakingbadapi.com/api/';
-const fetcher = (...args) => fetch(...args).then((res) => res.json());
+const fetcher = (url) => axios.get(url).then((res) => res.data);
 
 export const useRequest = (path) => {
   const url = baseUrl + path;
-  const { data, error } = useSWR(url, fetcher);
-  return { data, error };
+  const { data, error, mutate } = useSWR(url, fetcher);
+
+  return { data, error, mutate };
 };

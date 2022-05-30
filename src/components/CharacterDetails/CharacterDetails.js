@@ -11,7 +11,6 @@ import { apiGetCharacterByName } from '../../services/api';
 
 const CharacterDetails = () => {
   let { characterName } = useParams();
-  console.log(characterName);
   const { data: character } = useRequest(
     `${apiGetCharacterByName}${characterName}`
   );

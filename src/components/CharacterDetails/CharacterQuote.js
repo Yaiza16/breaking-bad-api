@@ -7,10 +7,12 @@ import { useParams } from 'react-router-dom';
 
 const CharacterQuote = () => {
   let { characterName } = useParams();
-  console.log(characterName);
-  const { data: quote } = useRequest(
+  const { data: quote, mutate } = useRequest(
     `${apiGetQuoteByCharacterName}${characterName}`
   );
+  const handleOnClick = () => {
+    mutate();
+  };
   return (
     <>
       <Typography variant="overline" component="h4" textAlign="center">
@@ -20,7 +22,11 @@ const CharacterQuote = () => {
       </Typography>
 
       {quote[0] !== undefined && (
-        <Button variant="outlined" startIcon={<RestartAltIcon />} />
+        <Button
+          variant="outlined"
+          startIcon={<RestartAltIcon />}
+          onClick={handleOnClick}
+        />
       )}
     </>
   );
