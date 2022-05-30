@@ -1,0 +1,13 @@
+.reset-link {
+  text-decoration: none;
+  color: unset;
+
+  &:focus,
+  &:hover,
+  &:visited,
+  &:link,
+  &:active {
+    text-decoration: none;
+    color: unset;
+  }
+}

@@ -1,14 +1,12 @@
-import { Typography } from '@mui/material';
-import { Container } from '@mui/system';
 import React from 'react';
+import { Container } from '@mui/system';
 import { connect } from 'react-redux';
+import CharacterDetails from '../components/CharacterDetails/CharacterDetails';
 
 const CharacterPage = ({ character }) => {
   return (
-    <Container className="py-container">
-      <Typography align="center" variant="h4">
-        {character.name}
-      </Typography>
+    <Container className="py-container" sx={{ flexGrow: '1' }}>
+      <CharacterDetails character={character} />
     </Container>
   );
 };

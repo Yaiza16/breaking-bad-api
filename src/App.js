@@ -1,8 +1,9 @@
 import { Provider } from 'react-redux';
-import { Wrapper, Header } from './layout';
+import { Wrapper, Header, Footer } from './layout';
 import store from './store';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Router from './routes/routes';
+import { BrowserRouter } from 'react-router-dom';
 
 const theme = createTheme({
   palette: {
@@ -31,10 +32,13 @@ function App() {
   return (
     <Provider store={store}>
       <ThemeProvider theme={theme}>
-        <Wrapper>
-          <Header />
-          <Router />
-        </Wrapper>
+        <BrowserRouter>
+          <Wrapper>
+            <Header />
+            <Router />
+            <Footer />
+          </Wrapper>
+        </BrowserRouter>
       </ThemeProvider>
     </Provider>
   );

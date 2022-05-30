@@ -13,18 +13,15 @@ const MainPage = ({ getCharacters, dataCharacters }) => {
     getCharacters();
   }, []);
 
+  if (loading) return <Loader />;
   return (
     <Container disableGutters className="py-container" maxWidth="lg">
-      {loading ? (
-        <Loader />
-      ) : (
-        <Grid container spacing={7}>
-          {characters.length > 0 &&
-            characters.map((character) => (
-              <CharacterCard character={character} />
-            ))}
-        </Grid>
-      )}
+      <Grid container spacing={7}>
+        {characters.length > 0 &&
+          characters.map((character) => (
+            <CharacterCard character={character} />
+          ))}
+      </Grid>
     </Container>
   );
 };
