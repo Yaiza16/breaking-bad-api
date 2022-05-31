@@ -6,6 +6,7 @@ import TabPanel from '@mui/lab/TabPanel';
 import React, { useState } from 'react';
 import { Grid, Tab, Typography } from '@mui/material';
 import { getAge } from '../../helpers/getAge';
+import { useTranslation } from 'react-i18next';
 
 const CharacterTabLine = ({ title, data }) => {
   return (
@@ -19,6 +20,7 @@ const CharacterTabLine = ({ title, data }) => {
 };
 
 const CharacterTabs = ({ character }) => {
+  const [t, i18next] = useTranslation('global');
   const [value, setValue] = useState('1');
 
   const handleChange = (event, newValue) => {
@@ -41,7 +43,11 @@ const CharacterTabs = ({ character }) => {
             aria-label="lab API tabs example"
             sx={{ width: '100%' }}
           >
-            <Tab label="Main Information" value="1" className="item-flex" />
+            <Tab
+              label={t('character.firstTag')}
+              value="1"
+              className="item-flex"
+            />
             <Tab label="Serie" value="2" className="item-flex" />
           </TabList>
         </Box>

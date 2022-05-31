@@ -5,6 +5,11 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Router from './routes/routes';
 import { BrowserRouter } from 'react-router-dom';
 import { SWRConfig } from 'swr';
+import { I18nextProvider } from 'react-i18next';
+import i18next from 'i18next';
+
+import global_es from './translation/es/global.json';
+import global_en from './translation/en/global.json';
 
 const theme = createTheme({
   palette: {
@@ -29,26 +34,42 @@ const theme = createTheme({
   },
 });
 
+i18next.init({
+  interpolation: { escapeValue: false },
+  lng: 'es',
+  resources: {
+    es: {
+      global: global_es,
+    },
+
+    en: {
+      global: global_en,
+    },
+  },
+});
+
 function App() {
   return (
     <Provider store={store}>
       <ThemeProvider theme={theme}>
-        <SWRConfig
-          value={{
-            suspense: true,
-            revalidateOnFocus: false,
-            revalidateOnMount: false,
-            revalidateOnReconnect: false,
-          }}
-        >
-          <BrowserRouter>
-            <Wrapper>
-              <Header />
-              <Router />
-              <Footer />
-            </Wrapper>
-          </BrowserRouter>
-        </SWRConfig>
+        <I18nextProvider i18n={i18next}>
+          <SWRConfig
+            value={{
+              suspense: true,
+              revalidateOnFocus: false,
+              revalidateOnMount: false,
+              revalidateOnReconnect: false,
+            }}
+          >
+            <BrowserRouter>
+              <Wrapper>
+                <Header />
+                <Router />
+                <Footer />
+              </Wrapper>
+            </BrowserRouter>
+          </SWRConfig>
+        </I18nextProvider>
       </ThemeProvider>
     </Provider>
   );
