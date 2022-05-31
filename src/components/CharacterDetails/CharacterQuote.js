@@ -4,12 +4,15 @@ import { Button, Typography } from '@mui/material';
 import { useRequest } from '../../hooks/useRequest';
 import { apiGetQuoteByCharacterName } from '../../services/api';
 import { useParams } from 'react-router-dom';
+import { LoadingButton } from '@mui/lab';
 
 const CharacterQuote = () => {
   let { characterName } = useParams();
-  const { data: quote, mutate } = useRequest(
-    `${apiGetQuoteByCharacterName}${characterName}`
-  );
+  const {
+    data: quote,
+    mutate,
+    isValidating,
+  } = useRequest(`${apiGetQuoteByCharacterName}${characterName}`);
   const handleOnClick = () => {
     mutate();
   };
@@ -21,13 +24,17 @@ const CharacterQuote = () => {
           : quote[0].quote}
       </Typography>
 
-      {quote[0] !== undefined && (
-        <Button
-          variant="outlined"
-          startIcon={<RestartAltIcon />}
-          onClick={handleOnClick}
-        />
-      )}
+      {quote[0] !== undefined &&
+        (isValidating ? (
+          <LoadingButton
+            loading
+            variant="text"
+            style={{ color: 'black', height: '20px' }}
+            className="loading-button-spinner"
+          />
+        ) : (
+          <Button startIcon={<RestartAltIcon />} onClick={handleOnClick} />
+        ))}
     </>
   );
 };

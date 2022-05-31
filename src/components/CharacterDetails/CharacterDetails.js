@@ -8,7 +8,6 @@ import CharacterQuote from './CharacterQuote';
 import { useRequest } from '../../hooks/useRequest';
 import { useParams } from 'react-router-dom';
 import { apiGetCharacterByName } from '../../services/api';
-import Loader from '../Loader/Loader';
 
 const CharacterDetails = () => {
   let { characterName } = useParams();
@@ -22,9 +21,7 @@ const CharacterDetails = () => {
     >
       <CharacterTitle name={character[0].name} />
       <div className="quote-container">
-        <Suspense fallback={<p>Cargando...</p>}>
           <CharacterQuote />
-        </Suspense>
       </div>
       <Box>
         <Card

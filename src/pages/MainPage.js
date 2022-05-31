@@ -16,10 +16,6 @@ const MainPage = () => {
     dispatch(fetchCharacters());
   }, [dispatch]);
 
-  useEffect(() => {
-    console.log(characters);
-  }, [characters]);
-
   if (loading) return <Loader />;
   return (
     <Container disableGutters className="py-container" maxWidth="lg">

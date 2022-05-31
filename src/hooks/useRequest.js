@@ -6,7 +6,7 @@ const fetcher = (url) => axios.get(url).then((res) => res.data);
 
 export const useRequest = (path) => {
   const url = baseUrl + path;
-  const { data, error, mutate } = useSWR(url, fetcher);
+  const { data, error, mutate, isValidating } = useSWR(url, fetcher);
 
-  return { data, error, mutate };
+  return { data, error, mutate, isValidating };
 };
