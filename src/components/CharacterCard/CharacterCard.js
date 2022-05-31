@@ -7,11 +7,9 @@ import {
   Typography,
 } from '@mui/material';
 import React from 'react';
-import { connect } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { setCurrentCharacter } from '../../actions/characters';
 
-const CharacterCard = ({ character, setCurrentCharacter }) => {
+const CharacterCard = ({ character}) => {
   const navigate = useNavigate();
 
   const handleNavigate = () => {
@@ -19,7 +17,6 @@ const CharacterCard = ({ character, setCurrentCharacter }) => {
     navigate(`character/${name}`);
   };
   const handleOnClick = () => {
-    setCurrentCharacter(character);
     handleNavigate();
   };
   
@@ -53,4 +50,4 @@ const CharacterCard = ({ character, setCurrentCharacter }) => {
   );
 };
 
-export default connect(null, { setCurrentCharacter })(CharacterCard);
+export default CharacterCard;

@@ -1,21 +1,24 @@
-import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
-
-import { connect } from 'react-redux';
-import { getCharacters } from '../actions/characters';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Container, Grid, Typography } from '@mui/material';
 import CharacterCard from '../components/CharacterCard/CharacterCard';
 import Loader from '../components/Loader/Loader';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import { fetchCharacters } from '../features/character/characterSlice';
 
-const MainPage = ({ getCharacters, dataCharacters }) => {
+const MainPage = () => {
   const [t] = useTranslation('global');
+  const { list: characters, loading } = useSelector((state) => state.character);
+  const dispatch = useDispatch();
 
-  const { characters, loading } = dataCharacters;
   useEffect(() => {
-    getCharacters();
-  }, []);
+    dispatch(fetchCharacters());
+  }, [dispatch]);
+
+  useEffect(() => {
+    console.log(characters);
+  }, [characters]);
 
   if (loading) return <Loader />;
   return (
@@ -30,7 +33,8 @@ const MainPage = ({ getCharacters, dataCharacters }) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
       >
-        {characters.length > 0 &&
+        {characters &&
+          characters.length > 0 &&
           characters.map((character) => (
             <CharacterCard character={character} />
           ))}
@@ -39,13 +43,4 @@ const MainPage = ({ getCharacters, dataCharacters }) => {
   );
 };
 
-MainPage.propTypes = {
-  getCharacters: PropTypes.func.isRequired,
-  characters: PropTypes.array.isRequired,
-};
-
-const mapStateToProps = (state) => ({
-  dataCharacters: state.characters,
-});
-
-export default connect(mapStateToProps, { getCharacters })(MainPage);
+export default MainPage;
