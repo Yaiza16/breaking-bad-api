@@ -3,6 +3,15 @@
     "mainPage": "Personajes"
   },
   "character": {
-    "firstTag": "Información principal"
+    "firstTag": "Información principal",
+    "secondTag": "Serie",
+    "features": {
+      "nickname": "Apodo",
+      "birthday": "Cumpleaños",
+      "occupation": "Profesión",
+      "status": "Estado",
+      "portrayed": "Protagonizado por",
+      "episodes": "Episodios"
+    }
   }
 }

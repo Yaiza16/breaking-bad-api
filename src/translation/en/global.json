@@ -3,6 +3,15 @@
     "mainPage": "Characters"
   },
   "character": {
-    "firstTag": "Main Information"
+    "firstTag": "Main Information",
+    "secondTag": "Serie",
+    "features": {
+      "nickname": "Nickanme",
+      "birthday": "Birthday",
+      "occupation": "Occupation",
+      "status": "Status",
+      "portrayed": "Portrayed by",
+      "episodes": "Episodes"
+    }
   }
 }

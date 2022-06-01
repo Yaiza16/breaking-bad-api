@@ -3,7 +3,7 @@ import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Grid, Tab, Typography } from '@mui/material';
 import { getAge } from '../../helpers/getAge';
 import { useTranslation } from 'react-i18next';
@@ -26,6 +26,10 @@ const CharacterTabs = ({ character }) => {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  useEffect(() => {
+    console.log(value);
+  }, [value]);
   return (
     <Box
       sx={{
@@ -48,14 +52,21 @@ const CharacterTabs = ({ character }) => {
               value="1"
               className="item-flex"
             />
-            <Tab label="Serie" value="2" className="item-flex" />
+            <Tab
+              label={t('character.secondTag')}
+              value="2"
+              className="item-flex"
+            />
           </TabList>
         </Box>
         <TabPanel value="1" sx={{ height: '100%' }}>
           <div className="items-details-container">
-            <CharacterTabLine title="Nickname" data={character.nickname} />
             <CharacterTabLine
-              title="Birthday"
+              title={t('character.features.nickname')}
+              data={character.nickname}
+            />
+            <CharacterTabLine
+              title={t('character.features.birthday')}
               data={
                 character.birthday === 'Unknown'
                   ? character.birthday
@@ -63,15 +74,21 @@ const CharacterTabs = ({ character }) => {
               }
             />
             <CharacterTabLine
-              title="Occupation"
+              title={t('character.features.occupation')}
               data={character.occupation.join(', ')}
             />
-            <CharacterTabLine title="Status" data={character.status} />
+            <CharacterTabLine
+              title={t('character.features.status')}
+              data={character.status}
+            />
           </div>
         </TabPanel>
         <TabPanel value="2" sx={{ height: '100%' }}>
           <div className="items-details-container">
-            <CharacterTabLine title="Portrayed by" data={character.portrayed} />
+            <CharacterTabLine
+              title={t('character.features.portrayed')}
+              data={character.portrayed}
+            />
             <Grid
               container
               spacing={2}
@@ -86,7 +103,7 @@ const CharacterTabs = ({ character }) => {
                 }
               >
                 <Typography variant="subtitle2">
-                  Breaking Bad Episodes
+                  Breaking Bad {t('character.features.episodes')}
                 </Typography>
                 {character.appearance.map((episode) => (
                   <Typography variant="subtitle1">{episode}</Typography>
@@ -102,7 +119,7 @@ const CharacterTabs = ({ character }) => {
                   }
                 >
                   <Typography variant="subtitle2">
-                    Better Call Saul Episodes
+                    Better Call Saul {t('character.features.episodes')}
                   </Typography>
                   {character.better_call_saul_appearance.map((episode) => (
                     <Typography variant="subtitle1">{episode}</Typography>
