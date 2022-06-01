@@ -3,7 +3,7 @@ import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Grid, Tab, Typography } from '@mui/material';
 import { getAge } from '../../helpers/getAge';
 import { useTranslation } from 'react-i18next';
@@ -20,16 +20,13 @@ const CharacterTabLine = ({ title, data }) => {
 };
 
 const CharacterTabs = ({ character }) => {
-  const [t, i18next] = useTranslation('global');
+  const [t] = useTranslation('global');
   const [value, setValue] = useState('1');
 
-  const handleChange = (event, newValue) => {
+  const handleChange = (e, newValue) => {
     setValue(newValue);
   };
 
-  useEffect(() => {
-    console.log(value);
-  }, [value]);
   return (
     <Box
       sx={{

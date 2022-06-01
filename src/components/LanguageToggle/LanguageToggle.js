@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next';
 
 const LanguageToggle = () => {
   const { i18n } = useTranslation();
-  console.log(i18n.language);
   return (
     <Box>
       <span class="fi fi-gr fis" style={{ width: '20px' }}></span>

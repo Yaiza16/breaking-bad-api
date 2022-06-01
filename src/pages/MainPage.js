@@ -1,20 +1,14 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import { Container, Grid, Typography } from '@mui/material';
 import CharacterCard from '../components/CharacterCard/CharacterCard';
 import Loader from '../components/Loader/Loader';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { fetchCharacters } from '../features/character/characterSlice';
 
 const MainPage = () => {
   const [t] = useTranslation('global');
   const { list: characters, loading } = useSelector((state) => state.character);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchCharacters());
-  }, [dispatch]);
 
   if (loading) return <Loader />;
   return (

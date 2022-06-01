@@ -10,6 +10,7 @@ import i18next from 'i18next';
 
 import global_es from './translation/es/global.json';
 import global_en from './translation/en/global.json';
+import { fetchCharacters } from './features/character/characterSlice';
 
 const theme = createTheme({
   palette: {
@@ -47,6 +48,8 @@ i18next.init({
     },
   },
 });
+
+store.dispatch(fetchCharacters());
 
 function App() {
   return (
