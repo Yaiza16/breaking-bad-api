@@ -96,27 +96,23 @@ const CharacterTabs = ({ character }) => {
               textAlign={'center'}
               margin={0}
             >
-              <Grid
-                item
-                xs={
-                  character.better_call_saul_appearance.length > 0 ? '8' : '16'
-                }
-              >
-                <Typography variant="subtitle2">
-                  Breaking Bad {t('character.features.episodes')}
-                </Typography>
-                {character.appearance.map((episode) => (
-                  <Typography variant="subtitle1">{episode}</Typography>
-                ))}
-              </Grid>
+              {character.appearance.length > 0 && (
+                <Grid
+                  item
+                  xs={character.category.indexOf(',') > -1 ? '8' : '16'}
+                >
+                  <Typography variant="subtitle2">
+                    Breaking Bad {t('character.features.episodes')}
+                  </Typography>
+                  {character.appearance.map((episode) => (
+                    <Typography variant="subtitle1">{episode}</Typography>
+                  ))}
+                </Grid>
+              )}
               {character.better_call_saul_appearance.length > 0 && (
                 <Grid
                   item
-                  xs={
-                    character.better_call_saul_appearance.length > 0
-                      ? '8'
-                      : '16'
-                  }
+                  xs={character.category.indexOf(',') > -1 ? '8' : '16'}
                 >
                   <Typography variant="subtitle2">
                     Better Call Saul {t('character.features.episodes')}
