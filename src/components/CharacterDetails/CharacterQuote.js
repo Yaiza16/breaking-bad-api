@@ -1,13 +1,13 @@
 import React from 'react';
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
 import { Button, Typography } from '@mui/material';
-import { useRequest } from '../../hooks/useRequest';
-import { apiGetQuoteByCharacterName } from '../../services/api';
 import { useParams } from 'react-router-dom';
 import { LoadingButton } from '@mui/lab';
+import useRequest from '../../hooks/useRequest';
+import { apiGetQuoteByCharacterName } from '../../services/api';
 
-const CharacterQuote = () => {
-  let { characterName } = useParams();
+function CharacterQuote() {
+  const { characterName } = useParams();
   const {
     data: quote,
     mutate,
@@ -37,6 +37,6 @@ const CharacterQuote = () => {
         ))}
     </>
   );
-};
+}
 
 export default CharacterQuote;

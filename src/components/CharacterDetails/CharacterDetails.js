@@ -1,16 +1,16 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import { Card, CardContent } from '@mui/material';
 import { Box, Container } from '@mui/system';
+import { useParams } from 'react-router-dom';
 import CharacterImage from './CharacterImage';
 import CharacterTabs from './CharacterTabs';
 import CharacterTitle from './CharacterTitle';
 import CharacterQuote from './CharacterQuote';
-import { useRequest } from '../../hooks/useRequest';
-import { useParams } from 'react-router-dom';
+import useRequest from '../../hooks/useRequest';
 import { apiGetCharacterByName } from '../../services/api';
 
-const CharacterDetails = () => {
-  let { characterName } = useParams();
+function CharacterDetails() {
+  const { characterName } = useParams();
   const { data: character } = useRequest(
     `${apiGetCharacterByName}${characterName}`
   );
@@ -21,7 +21,7 @@ const CharacterDetails = () => {
     >
       <CharacterTitle name={character[0].name} />
       <div className="quote-container">
-          <CharacterQuote />
+        <CharacterQuote />
       </div>
       <Box>
         <Card
@@ -36,6 +36,6 @@ const CharacterDetails = () => {
       </Box>
     </Container>
   );
-};
+}
 
 export default CharacterDetails;

@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import {
   Card,
   CardActionArea,
@@ -6,10 +8,11 @@ import {
   Grid,
   Typography,
 } from '@mui/material';
+
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const CharacterCard = ({ character}) => {
+function CharacterCard({ character }) {
   const navigate = useNavigate();
 
   const handleNavigate = () => {
@@ -19,7 +22,6 @@ const CharacterCard = ({ character}) => {
   const handleOnClick = () => {
     handleNavigate();
   };
-  
 
   return (
     <Grid item xs={3}>
@@ -48,6 +50,8 @@ const CharacterCard = ({ character}) => {
       </Card>
     </Grid>
   );
-};
+}
+
+CharacterCard.propTypes = { character: PropTypes.shape.isRequired };
 
 export default CharacterCard;

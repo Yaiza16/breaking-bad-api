@@ -15,7 +15,7 @@
     "axios": "^0.27.2",
     "framer-motion": "^6.3.5",
     "i18next": "^21.8.5",
-    "prettier": "^2.6.2",
+    "prop-types": "^15.8.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-i18next": "^11.16.9",
@@ -34,6 +34,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "lint": "eslint --fix",
+    "pretty": "prettier --write .",
     "cypress:open": "cypress open"
   },
   "eslintConfig": {
@@ -55,6 +57,14 @@
     ]
   },
   "devDependencies": {
-    "cypress": "^9.7.0"
+    "cypress": "^9.7.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "prettier": "^2.6.2"
   }
 }

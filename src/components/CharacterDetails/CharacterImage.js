@@ -1,7 +1,9 @@
+import PropTypes from 'prop-types';
+
 import { CardMedia } from '@mui/material';
 import React from 'react';
 
-const CharacterImage = ({ image, name }) => {
+function CharacterImage({ image, name }) {
   return (
     <CardMedia
       component="img"
@@ -10,6 +12,11 @@ const CharacterImage = ({ image, name }) => {
       alt={`${name} image`}
     />
   );
+}
+
+CharacterImage.propTypes = {
+  image: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
 };
 
 export default CharacterImage;

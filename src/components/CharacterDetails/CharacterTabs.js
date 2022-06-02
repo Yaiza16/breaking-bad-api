@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import { Box } from '@mui/system';
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
@@ -5,10 +7,10 @@ import TabPanel from '@mui/lab/TabPanel';
 
 import React, { useState } from 'react';
 import { Grid, Tab, Typography } from '@mui/material';
-import { getAge } from '../../helpers/getAge';
 import { useTranslation } from 'react-i18next';
+import getAge from '../../helpers/getAge';
 
-const CharacterTabLine = ({ title, data }) => {
+function CharacterTabLine({ title, data }) {
   return (
     <div>
       <Typography variant="subtitle2">
@@ -17,9 +19,9 @@ const CharacterTabLine = ({ title, data }) => {
       </Typography>
     </div>
   );
-};
+}
 
-const CharacterTabs = ({ character }) => {
+function CharacterTabs({ character }) {
   const [t] = useTranslation('global');
   const [value, setValue] = useState('1');
 
@@ -90,7 +92,7 @@ const CharacterTabs = ({ character }) => {
               container
               spacing={2}
               columns={16}
-              textAlign={'center'}
+              textAlign="center"
               margin={0}
             >
               {character.appearance.length > 0 && (
@@ -99,7 +101,8 @@ const CharacterTabs = ({ character }) => {
                   xs={character.category.indexOf(',') > -1 ? '8' : '16'}
                 >
                   <Typography variant="subtitle2">
-                    Breaking Bad {t('character.features.episodes')}
+                    Breaking Bad
+                    {t('character.features.episodes')}
                   </Typography>
                   {character.appearance.map((episode) => (
                     <Typography variant="subtitle1">{episode}</Typography>
@@ -112,7 +115,8 @@ const CharacterTabs = ({ character }) => {
                   xs={character.category.indexOf(',') > -1 ? '8' : '16'}
                 >
                   <Typography variant="subtitle2">
-                    Better Call Saul {t('character.features.episodes')}
+                    Better Call Saul
+                    {t('character.features.episodes')}
                   </Typography>
                   {character.better_call_saul_appearance.map((episode) => (
                     <Typography variant="subtitle1">{episode}</Typography>
@@ -125,6 +129,13 @@ const CharacterTabs = ({ character }) => {
       </TabContext>
     </Box>
   );
+}
+
+CharacterTabs.propTypes = { character: PropTypes.shape.isRequired };
+
+CharacterTabLine.propTypes = {
+  title: PropTypes.string.isRequired,
+  data: PropTypes.string.isRequired,
 };
 
 export default CharacterTabs;

@@ -1,15 +1,16 @@
+import React from 'react';
 import { Provider } from 'react-redux';
-import { Wrapper, Header, Footer } from './layout';
-import store from './store';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Router from './routes/routes';
 import { BrowserRouter } from 'react-router-dom';
 import { SWRConfig } from 'swr';
 import { I18nextProvider } from 'react-i18next';
 import i18next from 'i18next';
+import Router from './routes/routes';
+import store from './store';
+import { Wrapper, Header, Footer } from './layout';
 
-import global_es from './translation/es/global.json';
-import global_en from './translation/en/global.json';
+import globalEs from './translation/es/global.json';
+import globalEn from './translation/en/global.json';
 import { fetchCharacters } from './features/character/characterSlice';
 
 const theme = createTheme({
@@ -39,13 +40,9 @@ i18next.init({
   interpolation: { escapeValue: false },
   lng: 'es',
   resources: {
-    es: {
-      global: global_es,
-    },
+    es: { global: globalEs },
 
-    en: {
-      global: global_en,
-    },
+    en: { global: globalEn },
   },
 });
 

@@ -1,12 +1,12 @@
 import React from 'react';
 import Image from '../../assets/images/Walter-White-Breaking-Bad.png';
 
-const Loader = () => {
+function Loader() {
   return (
     <div className="loader-container">
-      <img src={Image} alt="loader-bb"></img>
+      <img src={Image} alt="loader-bb" />
     </div>
   );
-};
+}
 
 export default Loader;

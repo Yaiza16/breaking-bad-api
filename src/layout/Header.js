@@ -1,9 +1,9 @@
 import React from 'react';
 import { AppBar, Toolbar } from '@mui/material';
 import { Link } from 'react-router-dom';
-import LanguageToggle from '../../components/LanguageToggle/LanguageToggle';
+import LanguageToggle from '../components/LanguageToggle/LanguageToggle';
 
-const Header = () => {
+function Header() {
   return (
     <AppBar className="toolbar" position="static">
       <Toolbar
@@ -20,6 +20,6 @@ const Header = () => {
       </Toolbar>
     </AppBar>
   );
-};
+}
 
 export default Header;

@@ -1,10 +1,10 @@
 import { Link, Typography } from '@mui/material';
-import { Box, Container } from '@mui/system';
+import { Container } from '@mui/system';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import React from 'react';
 
-const Footer = () => {
+function Footer() {
   return (
     <footer className="footer-container">
       <Container
@@ -27,14 +27,14 @@ const Footer = () => {
           <Link
             className="icon-item"
             href="https://www.linkedin.com/in/yaizavc/"
-            target={'_blank'}
+            target="_blank"
           >
             <LinkedInIcon fontSize="lg" />
           </Link>
           <Link
             className="icon-item"
             href="https://github.com/Yaiza16"
-            target={'_blank'}
+            target="_blank"
           >
             <GitHubIcon fontSize="lg" />
           </Link>
@@ -43,6 +43,6 @@ const Footer = () => {
       </Container>
     </footer>
   );
-};
+}
 
 export default Footer;

@@ -1,5 +1,5 @@
-import Wrapper from "./Wrapper/Wrapper";
-import Header from "./Header/Header";
-import Footer from "./Footer/Footer";
+import Wrapper from './Wrapper';
+import Header from './Header';
+import Footer from './Footer';
 
-export {Wrapper, Header, Footer };
+export { Wrapper, Header, Footer };
