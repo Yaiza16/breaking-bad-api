@@ -26,7 +26,7 @@ function CharacterCard({ character }) {
   return (
     <Grid item xs={3}>
       <Card sx={{ maxWidth: 400 }}>
-        <CardActionArea onClick={handleOnClick}>
+        <CardActionArea onClick={handleOnClick} data-test-id="clickCard">
           <CardMedia
             component="img"
             height="300px"
