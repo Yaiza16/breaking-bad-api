@@ -1,10 +1,11 @@
 import { Box, Button, Typography } from '@mui/material';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
 import { useTranslation } from 'react-i18next';
 
 function ErrorPage() {
   const [t] = useTranslation('global');
+  const location = useLocation();
   return (
     <Box
       display="flex"
@@ -13,7 +14,7 @@ function ErrorPage() {
       justifyContent="space-evenly"
       width="100%"
     >
-      <Typography variant="h4">{t('error.msg')}</Typography>
+      <Typography variant="h4">{t(`${location.state.msg}`)}</Typography>
       <Typography variant="h1">Error 404</Typography>
 
       <NavLink to="/" style={{ textDecoration: 'none' }}>

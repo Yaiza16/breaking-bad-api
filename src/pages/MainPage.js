@@ -1,21 +1,25 @@
-import React from 'react';
 import { useSelector } from 'react-redux';
-import { Container, Grid, Typography } from '@mui/material';
+import { Container, Grid } from '@mui/material';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import { Navigate } from 'react-router-dom';
 import CharacterCard from '../components/CharacterCard/CharacterCard';
 import Loader from '../components/Loader/Loader';
+import PageTitle from '../components/PageTitle/PageTitle';
 
 function MainPage() {
   const [t] = useTranslation('global');
-  const { list: characters, loading } = useSelector((state) => state.character);
+  const {
+    list: characters,
+    loading,
+    error,
+  } = useSelector((state) => state.character);
 
   if (loading) return <Loader />;
+  if (error) return <Navigate to="/404" state={{ msg: 'error.dataError' }} />;
   return (
     <Container disableGutters className="py-container" maxWidth="lg">
-      <Typography variant="h3" textAlign="center" marginBottom="1.5rem">
-        {t('title.mainPage')}
-      </Typography>
+      <PageTitle text={t('title.mainPage')} />
       <Grid
         container
         spacing={7}

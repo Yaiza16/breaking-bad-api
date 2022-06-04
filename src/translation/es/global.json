@@ -13,5 +13,9 @@
       "portrayed": "Protagonizado por",
       "episodes": "Episodios"
     }
+  },
+  "error": {
+    "msg": "Página no encontrada",
+    "dataError": "No se ha podido obtener la información"
   }
 }

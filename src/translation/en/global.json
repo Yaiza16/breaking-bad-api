@@ -6,12 +6,16 @@
     "firstTag": "Main Information",
     "secondTag": "Serie",
     "features": {
-      "nickname": "Nickanme",
+      "nickname": "Nickname",
       "birthday": "Birthday",
       "occupation": "Occupation",
       "status": "Status",
       "portrayed": "Portrayed by",
       "episodes": "Episodes"
     }
+  },
+  "error": {
+    "msg": "Page not found",
+    "dataError": "Could not fetch data"
   }
 }

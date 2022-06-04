@@ -13,6 +13,7 @@ export const characterSlice = createSlice({
   initialState: {
     list: [],
     loading: false,
+    error: null,
   },
   reducers: {},
   extraReducers: {
@@ -25,6 +26,7 @@ export const characterSlice = createSlice({
     },
     [fetchCharacters.rejected]: (state) => {
       state.loading = false;
+      state.error = true;
     },
   },
 });

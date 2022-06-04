@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import CharacterPage from '../pages/CharacterPage';
 import ErrorPage from '../pages/ErrorPage';
 import MainPage from '../pages/MainPage';
@@ -10,7 +10,11 @@ function Router() {
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/character/:characterName" element={<CharacterPage />} />
-        <Route path="*" element={<ErrorPage />} />
+        <Route path="/404" element={<ErrorPage />} />
+        <Route
+          path="*"
+          element={<Navigate replace to="/404" state={{ msg: 'error.msg' }} />}
+        />
       </Routes>
     </div>
   );

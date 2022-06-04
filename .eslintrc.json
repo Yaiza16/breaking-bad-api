@@ -18,8 +18,11 @@
     "comma-dangle": 0,
     "prettier/prettier": "error",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/react-in-jsx-scope": "off",
     "import/no-extraneous-dependencies": "off",
     "no-plusplus": "off",
+    "object-curly-newline": "off",
+    "no-param-reassign": ["error", { "props": false }],
     "operator-linebreak": "off"
   }
 }
