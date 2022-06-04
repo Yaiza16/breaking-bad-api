@@ -1,11 +1,14 @@
 import PropTypes from 'prop-types';
 import { CardMedia } from '@mui/material';
+import { cardStyles } from '../../../theme/components';
 
 function CharacterImage({ image, name }) {
+  const { cardImage } = cardStyles();
   return (
     <CardMedia
       component="img"
-      sx={{ width: 300 }}
+      // sx={{ width: 320 }}
+      className={cardImage}
       image={image}
       alt={`${name} image`}
     />

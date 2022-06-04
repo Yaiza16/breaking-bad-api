@@ -2,10 +2,14 @@ import { Link, Typography } from '@mui/material';
 import { Container } from '@mui/system';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import styles from '../theme/elements/layoutStyles';
+import { iconStyles } from '../theme/components';
 
 function Footer() {
+  const { icon } = iconStyles();
+  const { footer } = styles();
   return (
-    <footer className="footer-container">
+    <footer className={footer}>
       <Container
         maxWidth="lg"
         sx={{
@@ -24,14 +28,14 @@ function Footer() {
           }}
         >
           <Link
-            className="icon-item"
+            className={icon}
             href="https://www.linkedin.com/in/yaizavc/"
             target="_blank"
           >
             <LinkedInIcon fontSize="lg" />
           </Link>
           <Link
-            className="icon-item"
+            className={icon}
             href="https://github.com/Yaiza16"
             target="_blank"
           >

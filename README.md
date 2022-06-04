@@ -12,6 +12,10 @@ Con el fin de mejorar la calidad del código, seguir ciertas reglas y mantener u
 - Prettier
 - Husky
 
+### Estilos
+
+Aunque mi idea inicial fue usar SCSS (y así fue como empecé), al final opté por usar makeStyles de la librería de @mui/styles. Al ser un proyecto pequeño, creo que es más que suficiente. Para darle algo de animación, he usado la librería framer motion.
+
 ### Testing
 
 Para ejecutar el testing, correr el comando `npm run cypress`.

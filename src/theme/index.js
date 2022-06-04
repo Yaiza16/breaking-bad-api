@@ -14,13 +14,25 @@ const theme = createTheme({
       dark: '#c18f00',
       contrastText: '#000',
     },
+    grey: {
+      light: '#f0f0f075',
+      main: '#808080',
+    },
   },
   typography: {
-    fontWeightLight: 300,
-    fontWeightRegular: 400,
-    fontWeightMedium: 500,
-    fontWeightBold: 700,
+    fontFamily: 'Roboto, Arial',
+  },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 1000,
+      lg: 1200,
+      xl: 1536,
+    },
+  },
+  variables: {
+    boxShadow: '2px 4px 5px 2px rgba(0, 0, 0, 0.3) !important',
   },
 });
-
 export default theme;

@@ -1,7 +1,9 @@
 import PropTypes from 'prop-types';
+import useStyles from '../theme/elements/layoutStyles';
 
 function Wrapper({ children }) {
-  return <div className="page-wrapper">{children}</div>;
+  const { wrapper } = useStyles();
+  return <div className={wrapper}>{children}</div>;
 }
 
 Wrapper.propTypes = {

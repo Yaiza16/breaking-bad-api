@@ -7,30 +7,29 @@ import {
   CharacterTabs,
   CharacterTitle,
 } from './partials';
+import { cardStyles, quoteStyles } from '../../theme/components';
 import useRequest from '../../hooks/useRequest';
 import { apiGetCharacterByName } from '../../services/api/breakingBadApi';
 
 function CharacterDetails() {
+  const { cardCharacter } = cardStyles();
+  const { quote } = quoteStyles();
   const { characterName } = useParams();
   const { data: character } = useRequest(
     `${apiGetCharacterByName}${characterName}`
   );
-
   return (
     <Container
       sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
     >
       <CharacterTitle name={character[0].name} />
-      <div className="quote-container">
+      <div className={quote}>
         <CharacterQuote />
       </div>
       <Box>
-        <Card
-          sx={{ display: 'flex', maxWidth: '900px', width: '800px' }}
-          className="card-detail-character-container"
-        >
+        <Card className={cardCharacter}>
           <CharacterImage name={character[0].name} image={character[0].img} />
-          <CardContent sx={{ width: '100%' }} className="card-detail-character">
+          <CardContent sx={{ width: '100%', backgroundColor: '#f0f0f075' }}>
             <CharacterTabs character={character[0]} />
           </CardContent>
         </Card>

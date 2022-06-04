@@ -7,7 +7,7 @@ import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import { Grid, Tab, Typography } from '@mui/material';
-
+import { cardStyles } from '../../../theme/components';
 import getAge from '../../../helpers/getAge';
 
 function CharacterTabLine({ title, data }) {
@@ -22,6 +22,7 @@ function CharacterTabLine({ title, data }) {
 }
 
 function CharacterTabs({ character }) {
+  const { itemsDetail } = cardStyles();
   const [t] = useTranslation('global');
   const [value, setValue] = useState('1');
 
@@ -50,16 +51,17 @@ function CharacterTabs({ character }) {
               label={t('character.firstTag')}
               value="1"
               className="item-flex"
+              sx={{ flexGrow: '1' }}
             />
             <Tab
               label={t('character.secondTag')}
               value="2"
-              className="item-flex"
+              sx={{ flexGrow: '1' }}
             />
           </TabList>
         </Box>
         <TabPanel value="1" sx={{ height: '100%' }}>
-          <div className="items-details-container">
+          <Box className={itemsDetail}>
             <CharacterTabLine
               title={t('character.features.nickname')}
               data={character.nickname}
@@ -80,10 +82,10 @@ function CharacterTabs({ character }) {
               title={t('character.features.status')}
               data={character.status}
             />
-          </div>
+          </Box>
         </TabPanel>
         <TabPanel value="2" sx={{ height: '100%' }}>
-          <div className="items-details-container">
+          <div className={itemsDetail}>
             <CharacterTabLine
               title={t('character.features.portrayed')}
               data={character.portrayed}
@@ -102,7 +104,7 @@ function CharacterTabs({ character }) {
                 >
                   <Typography variant="subtitle2">
                     Breaking Bad
-                    {t('character.features.episodes')}
+                    {` ${t('character.features.episodes')}`}
                   </Typography>
                   {character.appearance.map((episode) => (
                     <Typography variant="subtitle1">{episode}</Typography>
@@ -116,7 +118,7 @@ function CharacterTabs({ character }) {
                 >
                   <Typography variant="subtitle2">
                     Better Call Saul
-                    {t('character.features.episodes')}
+                    {` ${t('character.features.episodes')}`}
                   </Typography>
                   {character.better_call_saul_appearance.map((episode) => (
                     <Typography variant="subtitle1">{episode}</Typography>

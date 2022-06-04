@@ -7,8 +7,10 @@ import {
   CardMedia,
   Typography,
 } from '@mui/material';
+import { cardStyles } from '../../theme/components';
 
 function CharacterCard({ character }) {
+  const { cardGrid } = cardStyles();
   const navigate = useNavigate();
 
   const handleNavigate = () => {
@@ -20,35 +22,7 @@ function CharacterCard({ character }) {
   };
 
   return (
-    // <Grid item xs={4} lg={3}>
-    //   <Card sx={{ maxWidth: 350 }}>
-    //     <CardActionArea onClick={handleOnClick} data-test-id="clickCard">
-    //       <CardMedia
-    //         component="img"
-    //         height="300px"
-    //         image={character.img}
-    //         alt={character.name}
-    //       />
-    //       <CardContent>
-    //         <Typography
-    //           gutterBottom
-    //           variant="h6"
-    //           component="div"
-    //           align="center"
-    //         >
-    //           {character.name}
-    //         </Typography>
-    //         <Typography variant="body1" align="center">
-    //           {character.category}
-    //         </Typography>
-    //       </CardContent>
-    //     </CardActionArea>
-    //   </Card>
-    // </Grid>
-    <Card
-      sx={{ maxWidth: 250, width: 250, minWidth: 250 }}
-      className="character-card"
-    >
+    <Card className={cardGrid}>
       <CardActionArea onClick={handleOnClick} data-test-id="clickCard">
         <CardMedia
           component="img"

@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { SWRConfig } from 'swr';
 import { I18nextProvider } from 'react-i18next';
 import i18next from 'i18next';
+import { CssBaseline } from '@mui/material';
 import Router from './routes/routes';
 import store from './store';
 import { Wrapper, Header, Footer } from './layout';
@@ -27,6 +28,7 @@ function App() {
   return (
     <Provider store={store}>
       <ThemeProvider theme={theme}>
+        <CssBaseline />
         <I18nextProvider i18n={i18next}>
           <SWRConfig
             value={{

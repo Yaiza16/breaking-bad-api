@@ -3,7 +3,7 @@ import { Typography } from '@mui/material';
 
 function PageTitle({ text }) {
   return (
-    <Typography variant="h3" textAlign="center" marginBottom="1.5rem">
+    <Typography variant="h3" textAlign="center" marginY="1.5rem">
       {text}
     </Typography>
   );

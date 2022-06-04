@@ -1,9 +1,11 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { CharacterPage, ErrorPage, MainPage } from '../pages';
+import styles from '../theme/elements/layoutStyles';
 
 function Router() {
+  const { routes } = styles();
   return (
-    <div className="routes-container">
+    <div className={routes}>
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/character/:characterName" element={<CharacterPage />} />

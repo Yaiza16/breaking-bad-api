@@ -9,7 +9,7 @@ import Loader from '../components/Loader/Loader';
 
 function CharacterPage() {
   return (
-    <Container className="py-container" sx={{ flexGrow: '1' }}>
+    <Container sx={{ flexGrow: '1', padding: '2rem 0' }}>
       <ErrorBoundary
         fallback={<Navigate to="/404" state={{ msg: 'error.dataError' }} />}
       >
