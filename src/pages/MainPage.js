@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { Container, Grid } from '@mui/material';
+import { Box, Container } from '@mui/material';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { Navigate } from 'react-router-dom';
@@ -18,11 +18,29 @@ function MainPage() {
   if (loading) return <Loader />;
   if (error) return <Navigate to="/404" state={{ msg: 'error.dataError' }} />;
   return (
+    // <Container disableGutters className="py-container" maxWidth="lg">
+    //   <PageTitle text={t('title.mainPage')} />
+    //   <Grid
+    //     container
+    //     spacing={4}
+    //     component={motion.div}
+    //     initial={{ opacity: 0 }}
+    //     animate={{ opacity: 1 }}
+    //   >
+    //     {characters &&
+    //       characters.length > 0 &&
+    //       characters.map((character) => (
+    //         <CharacterCard character={character} />
+    //       ))}
+    //   </Grid>
+    // </Container>
     <Container disableGutters className="py-container" maxWidth="lg">
       <PageTitle text={t('title.mainPage')} />
-      <Grid
-        container
-        spacing={7}
+      <Box
+        display="flex"
+        flexWrap="wrap"
+        rowGap={4}
+        justifyContent="space-between"
         component={motion.div}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -32,7 +50,7 @@ function MainPage() {
           characters.map((character) => (
             <CharacterCard character={character} />
           ))}
-      </Grid>
+      </Box>
     </Container>
   );
 }

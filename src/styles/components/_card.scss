@@ -1,5 +1,6 @@
 .character-card {
-  flex: 1 1 auto;
+  box-shadow: $box-shadow;
+  background-color: $background-color-card;
 }
 
 .item-flex {
@@ -16,9 +17,9 @@
 }
 
 .card-detail-character-container {
-  box-shadow: 2px 4px 5px 2px rgba(0, 0, 0, 0.3) !important;
+  box-shadow: $box-shadow;
 }
 
 .card-detail-character {
-  background-color: #f0f0f075;
+  background-color: $background-color-card;
 }
