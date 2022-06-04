@@ -17,12 +17,12 @@ function LanguageToggle() {
       value={alignment}
       exclusive
       onChange={handleAlignment}
-      aria-label="text alignment"
+      aria-label="text-alignment"
       color="secondary"
     >
       <ToggleButton
         value="left"
-        aria-label="spain language"
+        aria-label="spain-language"
         onClick={() => i18n.changeLanguage('es')}
         style={{ width: '50px', height: '50px' }}
       >
@@ -35,7 +35,7 @@ function LanguageToggle() {
       </ToggleButton>
       <ToggleButton
         value="right"
-        aria-label="english language"
+        aria-label="english-language"
         onClick={() => i18n.changeLanguage('en')}
         style={{ width: '50px', height: '50px' }}
       >

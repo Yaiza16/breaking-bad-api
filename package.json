@@ -38,6 +38,7 @@
     "lint": "eslint --fix",
     "pretty": "prettier --write .",
     "cypress": "cypress open",
+    "cypress:test": "cypress run",
     "prepare": "husky install"
   },
   "eslintConfig": {

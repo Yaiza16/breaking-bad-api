@@ -9,13 +9,6 @@ describe('Test Language toggle', () => {
       assert.isArray(characters.body, 'Characters response is an array');
     });
   });
-  it('Wrong API response redirect to error page', () => {
-    cy.intercept('GET', 'characters', { statusCode: 400 }).then(() => {
-      cy.location().should((loc) => {
-        expect(loc.pathname.toString()).to.contain('404');
-      });
-    });
-  });
   it('Character card after API request', () => {
     cy.request('characters').as('charactersRequest');
     cy.get('@charactersRequest').then((characters) => {
