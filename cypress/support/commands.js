@@ -23,3 +23,15 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('navigateToCharacterPage', () => {
+  cy.visit('http://localhost:3000');
+  cy.request('characters').as('charactersRequest');
+  cy.get('@charactersRequest').then((characters) => {
+    expect(characters.status).to.eq(200);
+    cy.get('[data-test-id="clickCard"]').first().click();
+    cy.location().should((loc) => {
+      expect(loc.pathname.toString()).to.contain('character');
+    });
+  });
+});

@@ -50,8 +50,8 @@ function CharacterTabs({ character }) {
             <Tab
               label={t('character.firstTag')}
               value="1"
-              className="item-flex"
               sx={{ flexGrow: '1' }}
+              data-test-id="tab-toggle"
             />
             <Tab
               label={t('character.secondTag')}
