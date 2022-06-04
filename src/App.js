@@ -7,9 +7,8 @@ import i18next from 'i18next';
 import Router from './routes/routes';
 import store from './store';
 import { Wrapper, Header, Footer } from './layout';
+import { globalEs, globalEn } from './translation';
 import theme from './theme';
-import globalEs from './translation/es/global.json';
-import globalEn from './translation/en/global.json';
 import { fetchCharacters } from './features/character/characterSlice';
 
 i18next.init({
