@@ -16,17 +16,3 @@ const useStyles = makeStyles(() => ({
 }));
 
 export default useStyles;
-
-// .quote-container {
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     gap: 0.5rem;
-//     min-height: 2.5rem;
-//     width: 100%;
-//     margin-bottom: 0.5rem;
-
-//     & button > span {
-//       margin: 0;
-//     }
-//   }

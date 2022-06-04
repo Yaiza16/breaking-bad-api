@@ -7,7 +7,6 @@ function CharacterImage({ image, name }) {
   return (
     <CardMedia
       component="img"
-      // sx={{ width: 320 }}
       className={cardImage}
       image={image}
       alt={`${name} image`}
