@@ -1,7 +1,5 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
-import CharacterPage from '../pages/CharacterPage';
-import ErrorPage from '../pages/ErrorPage';
-import MainPage from '../pages/MainPage';
+import { CharacterPage, ErrorPage, MainPage } from '../pages';
 
 function Router() {
   return (

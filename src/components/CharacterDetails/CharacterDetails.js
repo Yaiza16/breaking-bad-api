@@ -1,10 +1,12 @@
 import { Card, CardContent } from '@mui/material';
 import { Box, Container } from '@mui/system';
 import { useParams } from 'react-router-dom';
-import CharacterImage from './CharacterImage';
-import CharacterTabs from './CharacterTabs';
-import CharacterTitle from './CharacterTitle';
-import CharacterQuote from './CharacterQuote';
+import {
+  CharacterImage,
+  CharacterQuote,
+  CharacterTabs,
+  CharacterTitle,
+} from './partials';
 import useRequest from '../../hooks/useRequest';
 import { apiGetCharacterByName } from '../../services/api/breakingBadApi';
 

@@ -2,8 +2,8 @@ import { useParams } from 'react-router-dom';
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
 import { Button, Typography } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
-import useRequest from '../../hooks/useRequest';
-import { apiGetQuoteByCharacterName } from '../../services/api/breakingBadApi';
+import useRequest from '../../../hooks/useRequest';
+import { apiGetQuoteByCharacterName } from '../../../services/api/breakingBadApi';
 
 function CharacterQuote() {
   const { characterName } = useParams();
