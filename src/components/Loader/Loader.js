@@ -1,4 +1,3 @@
-import React from 'react';
 import Image from '../../assets/images/Walter-White-Breaking-Bad.png';
 
 function Loader() {

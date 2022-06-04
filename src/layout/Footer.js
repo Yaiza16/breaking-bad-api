@@ -2,7 +2,6 @@ import { Link, Typography } from '@mui/material';
 import { Container } from '@mui/system';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import React from 'react';
 
 function Footer() {
   return (

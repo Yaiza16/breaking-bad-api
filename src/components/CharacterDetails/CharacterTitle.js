@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import { Typography } from '@mui/material';
-import React from 'react';
 
 function CharacterTitle({ name }) {
   return (

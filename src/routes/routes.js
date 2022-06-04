@@ -1,4 +1,3 @@
-import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import CharacterPage from '../pages/CharacterPage';
 import ErrorPage from '../pages/ErrorPage';

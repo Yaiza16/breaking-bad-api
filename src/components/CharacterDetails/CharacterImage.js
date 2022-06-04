@@ -1,7 +1,5 @@
 import PropTypes from 'prop-types';
-
 import { CardMedia } from '@mui/material';
-import React from 'react';
 
 function CharacterImage({ image, name }) {
   return (

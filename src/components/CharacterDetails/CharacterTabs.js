@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
+import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { Box } from '@mui/system';
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
-
-import React, { useState } from 'react';
 import { Grid, Tab, Typography } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import getAge from '../../helpers/getAge';
 
 function CharacterTabLine({ title, data }) {

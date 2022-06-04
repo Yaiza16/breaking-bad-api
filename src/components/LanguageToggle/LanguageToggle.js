@@ -1,6 +1,5 @@
-import { Box, Button } from '@mui/material';
-import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Box, Button } from '@mui/material';
 
 function LanguageToggle() {
   const { i18n } = useTranslation();

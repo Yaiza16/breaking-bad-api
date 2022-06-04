@@ -1,4 +1,3 @@
-import React from 'react';
 import { Card, CardContent } from '@mui/material';
 import { Box, Container } from '@mui/system';
 import { useParams } from 'react-router-dom';

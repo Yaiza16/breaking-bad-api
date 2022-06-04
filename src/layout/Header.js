@@ -1,4 +1,3 @@
-import React from 'react';
 import { AppBar, Toolbar } from '@mui/material';
 import { Link } from 'react-router-dom';
 import LanguageToggle from '../components/LanguageToggle/LanguageToggle';

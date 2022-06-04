@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-
+import { useNavigate } from 'react-router-dom';
 import {
   Card,
   CardActionArea,
@@ -8,9 +8,6 @@ import {
   Grid,
   Typography,
 } from '@mui/material';
-
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
 
 function CharacterCard({ character }) {
   const navigate = useNavigate();
