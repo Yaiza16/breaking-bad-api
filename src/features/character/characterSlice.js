@@ -1,10 +1,10 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { apiCall } from '../../services/api';
+import { baseUrl } from '../../services/api/breakingBadApi';
 
 export const fetchCharacters = createAsyncThunk(
   'character/fetchCharacter',
   async () => {
-    const { data } = await apiCall.get('characters');
+    const { data } = await baseUrl.get('characters');
     return data;
   }
 );

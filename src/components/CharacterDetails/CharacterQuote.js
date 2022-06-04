@@ -4,7 +4,7 @@ import { Button, Typography } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import { LoadingButton } from '@mui/lab';
 import useRequest from '../../hooks/useRequest';
-import { apiGetQuoteByCharacterName } from '../../services/api';
+import { apiGetQuoteByCharacterName } from '../../services/api/breakingBadApi';
 
 function CharacterQuote() {
   const { characterName } = useParams();

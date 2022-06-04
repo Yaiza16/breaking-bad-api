@@ -7,7 +7,7 @@ import CharacterTabs from './CharacterTabs';
 import CharacterTitle from './CharacterTitle';
 import CharacterQuote from './CharacterQuote';
 import useRequest from '../../hooks/useRequest';
-import { apiGetCharacterByName } from '../../services/api';
+import { apiGetCharacterByName } from '../../services/api/breakingBadApi';
 
 function CharacterDetails() {
   const { characterName } = useParams();

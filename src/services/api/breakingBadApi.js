@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const apiCall = axios.create({
+export const baseUrl = axios.create({
   baseURL: 'https://www.breakingbadapi.com/api/',
 });
 
