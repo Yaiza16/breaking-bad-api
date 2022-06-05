@@ -23,6 +23,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('sm')]: {
       height: '420px !important',
       width: '420px !important',
+      objectPosition: 'top',
     },
   },
   cardCharacter: {
