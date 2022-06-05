@@ -16,6 +16,7 @@
   },
   "error": {
     "msg": "Page not found",
-    "dataError": "Could not fetch data"
+    "dataError": "Could not fetch data",
+    "notData": "There is not data to be shown"
   }
 }

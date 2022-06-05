@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import { useNavigate } from 'react-router-dom';
 import {
   Card,
   CardActionArea,
@@ -8,18 +7,11 @@ import {
   Typography,
 } from '@mui/material';
 import { cardStyles } from '../../theme/components';
+import useCharacter from '../../hooks/useCharacter';
 
 function CharacterCard({ character }) {
   const { cardGrid } = cardStyles();
-  const navigate = useNavigate();
-
-  const handleNavigate = () => {
-    const name = character.name.replace(/\s+/g, '+');
-    navigate(`character/${name}`);
-  };
-  const handleOnClick = () => {
-    handleNavigate();
-  };
+  const { handleOnClick } = useCharacter(character);
 
   return (
     <Card className={cardGrid}>

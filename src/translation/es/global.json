@@ -16,6 +16,7 @@
   },
   "error": {
     "msg": "Página no encontrada",
-    "dataError": "No se ha podido obtener la información"
+    "dataError": "No se ha podido obtener la información",
+    "notData": "No hay información para mostrar"
   }
 }

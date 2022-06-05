@@ -11,6 +11,13 @@ describe('Test Language toggle', () => {
     });
   });
 
+  it('Get message if characters request is empty', () => {
+    cy.intercept('characters', { body: [] }).as('charactersEmptyRequest');
+
+    cy.wait('@charactersEmptyRequest');
+    cy.contains('No hay información para mostrar');
+  });
+
   it('Get character cards after API request', () => {
     cy.request('characters').as('charactersRequest');
     cy.get('@charactersRequest').then((characters) => {

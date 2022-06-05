@@ -4,9 +4,9 @@ import { useTranslation } from 'react-i18next';
 import { Navigate } from 'react-router-dom';
 import { Box, Container } from '@mui/material';
 import { cardStyles } from '../theme/components';
-import CharacterCard from '../components/CharacterCard/CharacterCard';
 import Loader from '../components/Loader/Loader';
 import PageTitle from '../components/PageTitle/PageTitle';
+import CharacterList from '../components/CharacterList/CharacterList';
 
 function MainPage() {
   const { cardsContainer } = cardStyles();
@@ -31,11 +31,7 @@ function MainPage() {
         paddingX={4}
         className={cardsContainer}
       >
-        {characters &&
-          characters.length > 0 &&
-          characters.map((character) => (
-            <CharacterCard key={character.char_id} character={character} />
-          ))}
+        {characters && <CharacterList />}
       </Box>
     </Container>
   );
