@@ -3,24 +3,13 @@ import { ThemeProvider } from '@mui/material/styles';
 import { BrowserRouter } from 'react-router-dom';
 import { SWRConfig } from 'swr';
 import { I18nextProvider } from 'react-i18next';
-import i18next from 'i18next';
 import { CssBaseline } from '@mui/material';
+import i18next from './translation/i18next';
 import Router from './routes/routes';
 import store from './store';
-import { Wrapper, Header, Footer } from './layout';
-import { globalEs, globalEn } from './translation';
 import theme from './theme';
+import { Wrapper, Header, Footer } from './layout';
 import { fetchCharacters } from './features/character/characterSlice';
-
-i18next.init({
-  interpolation: { escapeValue: false },
-  lng: 'es',
-  resources: {
-    es: { global: globalEs },
-
-    en: { global: globalEn },
-  },
-});
 
 store.dispatch(fetchCharacters());
 
