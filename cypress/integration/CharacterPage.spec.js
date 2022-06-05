@@ -1,7 +1,8 @@
 describe('Testing character page', () => {
-  beforeEach(() => {
+  before(() => {
     cy.navigateToCharacterPage();
   });
+
   it('On click tab change active tab ', () => {
     cy.get('[role="tab"]')
       .eq(1)

@@ -4,8 +4,8 @@ import { baseUrl } from '../../services/api/breakingBadApi';
 export const fetchCharacters = createAsyncThunk(
   'character/fetchCharacter',
   async () => {
-    const { data } = await baseUrl.get('characters');
-    return data;
+    const res = await baseUrl.get('characters');
+    return res;
   }
 );
 export const characterSlice = createSlice({
@@ -22,11 +22,11 @@ export const characterSlice = createSlice({
     },
     [fetchCharacters.fulfilled]: (state, { payload }) => {
       state.loading = false;
-      state.list = payload;
+      state.list = payload.data;
     },
-    [fetchCharacters.rejected]: (state) => {
+    [fetchCharacters.rejected]: (state, { payload }) => {
       state.loading = false;
-      state.error = true;
+      state.error = payload.statusCode;
     },
   },
 });

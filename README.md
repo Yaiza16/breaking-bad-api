@@ -14,11 +14,16 @@ Con el fin de mejorar la calidad del código, seguir ciertas reglas y mantener u
 
 ### Estilos
 
-Aunque mi idea inicial fue usar SCSS (y así fue como empecé), al final opté por usar makeStyles de la librería de @mui/styles. Al ser un proyecto pequeño, creo que es más que suficiente. Para darle algo de animación, he usado la librería framer motion. El proyecto es completamente responsive.
+Aunque mi idea inicial fue usar SCSS (y así fue como empecé), al final opté por cambiar y usar JSS con `useStyles` de la librería de @mui/styles. Al ser un proyecto pequeño, creo que es más que suficiente. Para darle algo de animación, he usado la librería framer motion. El proyecto es completamente responsive.
 
 ### Testing
 
-Para ejecutar el testing, correr el comando `npm run cypress`.
+Para ejecutar el testing, correr el comando `npm run cypress`. Si se quiere ejecutar los tests en consola, el script es `npm run cypress:test.`
+
+## Estructura del proyecto
+
+## Router
+Para el router he usado la librería de [react-router-dom v6](https://reactrouter.com/docs/en/v6/getting-started/overview).
 
 ### Control del estado y llamadas a la API
 

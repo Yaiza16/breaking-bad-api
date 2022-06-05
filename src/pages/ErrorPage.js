@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 function ErrorPage() {
   const [t] = useTranslation('global');
   const location = useLocation();
+  console.log(location.state.error);
   return (
     <Box
       display="flex"
