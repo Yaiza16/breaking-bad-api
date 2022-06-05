@@ -5,4 +5,10 @@ export default configureStore({
   reducer: {
     character,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: ['character/fetchCharacter/fulfilled'],
+      },
+    }),
 });

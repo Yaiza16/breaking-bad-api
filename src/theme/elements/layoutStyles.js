@@ -16,5 +16,12 @@ const useStyles = makeStyles((theme) => ({
     padding: '0.5rem',
     backgroundColor: theme.palette.grey.main,
   },
+  errorPage: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'space-evenly',
+    width: '100%',
+  },
 }));
 export default useStyles;

@@ -44,14 +44,13 @@ function CharacterTabs({ character }) {
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
           <TabList
             onChange={handleChange}
-            aria-label="lab API tabs example"
+            aria-label="tab list"
             sx={{ width: '100%' }}
           >
             <Tab
               label={t('character.firstTag')}
               value="1"
               sx={{ flexGrow: '1' }}
-              data-test-id="tab-toggle"
             />
             <Tab
               label={t('character.secondTag')}
@@ -98,10 +97,7 @@ function CharacterTabs({ character }) {
               margin={0}
             >
               {character.appearance.length > 0 && (
-                <Grid
-                  item
-                  xs={character.category.indexOf(',') > -1 ? '8' : '16'}
-                >
+                <Grid item xs={character.category.indexOf(',') > -1 ? 8 : 16}>
                   <Typography variant="subtitle2">
                     Breaking Bad
                     {` ${t('character.features.episodes')}`}
@@ -112,10 +108,7 @@ function CharacterTabs({ character }) {
                 </Grid>
               )}
               {character.better_call_saul_appearance.length > 0 && (
-                <Grid
-                  item
-                  xs={character.category.indexOf(',') > -1 ? '8' : '16'}
-                >
+                <Grid item xs={character.category.indexOf(',') > -1 ? 8 : 16}>
                   <Typography variant="subtitle2">
                     Better Call Saul
                     {` ${t('character.features.episodes')}`}

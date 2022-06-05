@@ -1,7 +1,6 @@
-import { useTranslation } from 'react-i18next';
-
-import { ToggleButton, ToggleButtonGroup } from '@mui/material';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { ToggleButton, ToggleButtonGroup } from '@mui/material';
 import ImageEs from '../../assets/images/spain.png';
 import ImageEn from '../../assets/images/united-kingdom.png';
 

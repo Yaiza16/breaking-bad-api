@@ -34,7 +34,7 @@ function MainPage() {
         {characters &&
           characters.length > 0 &&
           characters.map((character) => (
-            <CharacterCard character={character} />
+            <CharacterCard key={character.char_id} character={character} />
           ))}
       </Box>
     </Container>
