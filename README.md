@@ -1,6 +1,14 @@
-# THE BREAKING BAD API
+<div  align="center">
+
+<h1>The Breaking Bad API
+
+<a href="https://breaking-bad-api-yvc.netlify.app">Live site</a>
+
+</div><br>
+<div  align="center">
 
 ![The Breaking Bad API](src/assets/breakingBadPreview.gif)
+</div>
 
 ### Indice
 
@@ -50,6 +58,7 @@ A la hora de estructurar el proyecto y sus componentes, he decidio hacerlo en tr
 - `components`: he guardado cada uno de los componentes que se ha usado en la aplicación.
 
 Además de esta estructura básica, el proyecto lo he dividido en otras carpetas:
+
 - `assets`: se encuentran todos los archivos de imágenes.
 - `features`: guarda todo lo relacionada con redux. Esta carpeta se completa con el archivo `store.js`. La estructura es la recomendada por [la documentación oficial de redux-toolkit](https://redux.js.org/faq/code-structure)
 - `helpers`: guarda todas las funciones útiles y reutilizables del proyecto En este caso guarda una única función para sacar la edad (dependiendo de la fecha de nacimiento).
