@@ -26,7 +26,7 @@ Proyecto realizado usando [The Breaking Bad API](https://breakingbadapi.com/). L
 
 ### Test
 
-Para ejecutar el testing, correr el comando `npm run cypress`. Si se quiere ejecutar los tests en consola, el script es `npm run cypress:test.`
+He usado la librería de testing e2e de cypress para realizar los tests. Para ejecutar los tests, correr el comando `npm run cypress`. Si se quiere ejecutar los tests en consola, el script es `npm run cypress:test.`
 
 ### Configuración inicial
 
