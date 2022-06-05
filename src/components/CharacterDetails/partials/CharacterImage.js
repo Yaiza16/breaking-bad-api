@@ -1,22 +1,20 @@
-import PropTypes from 'prop-types';
+import { useContext } from 'react';
 import { CardMedia } from '@mui/material';
+import { CharacterContext } from '../CharacterDetails';
 import { cardStyles } from '../../../theme/components';
 
-function CharacterImage({ image, name }) {
+function CharacterImage() {
+  const { name, img } = useContext(CharacterContext);
   const { cardImage } = cardStyles();
+
   return (
     <CardMedia
       component="img"
       className={cardImage}
-      image={image}
+      image={img}
       alt={`${name} image`}
     />
   );
 }
-
-CharacterImage.propTypes = {
-  image: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-};
 
 export default CharacterImage;

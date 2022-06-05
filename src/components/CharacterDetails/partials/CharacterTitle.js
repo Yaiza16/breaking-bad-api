@@ -1,16 +1,15 @@
-import PropTypes from 'prop-types';
+import { useContext } from 'react';
 import { Typography } from '@mui/material';
+import { CharacterContext } from '../CharacterDetails';
 
-function CharacterTitle({ name }) {
+function CharacterTitle() {
+  const { name } = useContext(CharacterContext);
+
   return (
     <Typography align="center" variant="h4" marginBottom={2}>
       {name}
     </Typography>
   );
 }
-
-CharacterTitle.propTypes = {
-  name: PropTypes.string.isRequired,
-};
 
 export default CharacterTitle;
