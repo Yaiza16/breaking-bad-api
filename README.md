@@ -8,6 +8,7 @@
 <div  align="center">
 
 ![The Breaking Bad API](src/assets/breakingBadPreview.gif)
+
 </div>
 
 ### Indice
@@ -81,3 +82,5 @@ Para controlar el estado de la aplicación y traer la información he usado dos 
 
 - **Redux toolkit**: lo he usado para hacer la petición a la API y traer todos los personajes a la página principal. Haciendo uso de los extraReducers que trae el `createSlice`, es muy fácil controlar el estado de la aplicación y así mostrar la información correspondiente dependiendo del estado de la petición (pending, rejected, fullfilled). El fetch lo he colocado en `App.js`, en el nivel más alto de la aplicación. Como la lista de personajes es algo que no va a cambiar y, por lo tanto, solo vamos a necesitar hacer la petición a la API una vez, colocándola ahí va a evitar hacer llamadas innecesarias a la misma.
 - **SWR / Suspense**: tanto para obtención de la información de detalle del personaje, como para traer la frase random, he usado la biblioteca de `SWR`, ya que creo que simplifica mucho a la hora de hacer las peticiones. He aprovechado y he creado un custom Hook para facilitar, todavía más, la petición. Además, aprovechando las nuevas características del componente `Suspense` que se han implantado con React 18, he usado el mismo para envolver ambos componentes. Ya que ahora este permite hacer renderizados en el lado del servidor y puesto que he metido ambos componenentes dentro del mismo suspense, se mostrará el fallback hasta que ambas peticiones se hayan completado. Para manejar el error, he usado la librería react-error-suspense con el componente ErrorBoundary de la misma.
+
+Además, en el componente `CharacterDetails.js` he usado el hook `useContext` para evitar tener que estar pasando toda la información del personaje a través de props.

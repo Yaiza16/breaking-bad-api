@@ -23,6 +23,7 @@
     "no-plusplus": "off",
     "object-curly-newline": "off",
     "implicit-arrow-linebreak": "off",
+    "import/no-cycle": "off",
     "react/no-unstable-nested-components": "off",
     "no-param-reassign": ["error", { "props": false }],
     "operator-linebreak": "off"
