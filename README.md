@@ -28,10 +28,10 @@ Proyecto realizado usando [The Breaking Bad API](https://breakingbadapi.com/). L
 
 ### Arrancar proyecto
 
-1 - Clonar el proyecto
-2 - Entra a la carpeta breaking-bad-api
-3 - Instala las dependencias `npm install`
-4 - Ejecuta el proyecto en local `npm run start`
+1. Clonar el proyecto
+2. Entra a la carpeta breaking-bad-api
+3. Instala las dependencias `npm install`
+4. Ejecuta el proyecto en local `npm run start`
 
 ### Test
 
